@@ -17,5 +17,5 @@ public class DemoLoader implements CommandLineRunner{
     @Override
     public void run(String... string) throws Exception {
         this.repository.save(new Task("To read"));
-    }   
+    } 
 }

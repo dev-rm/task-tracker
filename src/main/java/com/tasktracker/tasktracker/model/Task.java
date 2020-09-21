@@ -8,20 +8,23 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.Data;
 
 @Data
 @Entity
-
 public class Task {
-    private @Id @GeneratedValue Long id;
-    private String taskName;
-    private @Temporal(TemporalType.TIMESTAMP) Date savedDate;
+    public @Id @GeneratedValue Long id;
+    public String taskName;
+    @CreationTimestamp 
+    @Temporal(TemporalType.TIMESTAMP) 
+    public Date savedDate;
 
     public Task() {}
 
     public Task(String taskName) {
         this.taskName = taskName;
         //this.savedDate = savedDate;
-    } 
+    }
 }
